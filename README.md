@@ -45,6 +45,44 @@
     - It uses Spring Platform Transaction Manager which is basically the **JPATransactionManager**
     - This is responsible for providing Begin, Commit and Rollback
 
+### @Transactional Parameters (Transaction Advice)
+
+#### Propagation
+- This talks about how transaction are related to each other
+  - REQUIRED
+    - Code will always run in a transaction.
+    - Creates one or reuses one if one available
+    - This is the default option
+  - REQUIRES NEW
+    - Code will always run in a new transaction
+  - NEVER
+    - This will never run the code in transaction
+
+#### Isolation
+- This property allows how the data inside the transaction is available to the outside world
+- Different Isolation levels have different performance characteristics
+  - READ_UNCOMMITED:
+    - Allows Dirty Reads
+  - READ_COMMITED:    
+    - This does not allow Dirty Reads
+  - REPETABLE_READ:    
+    - If a row is READ in a transaction twice it will result in the same data
+  - SERIALIZABLE:    
+    - This performs all transactions in a sequence
+
+#### timeout
+- This setting to set a timeout for the underlying transaction
+
+#### readOnly
+- Setting this flag to **true** will only make the transactions to read and restricts any write operation
+- Default value of this one is **false**
+
+#### rollback and noRollbackFor
+- This give you more options on what transactions to rollback and what not to rollback
+
+
+
+
 ### How to enable Transactions logging?
 
 ```
