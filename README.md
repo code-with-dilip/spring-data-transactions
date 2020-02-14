@@ -66,7 +66,7 @@ logging.level.org.hibernate.type.descriptor.sql: trace
   - Each entity will have its own EntityManager.
   - The EntityManager is the instance that takes care of interacting with the persistence context.
   - EntityManagerFactory holds the factory of EntityManager
--  Persistence Context
+- Persistence Context
   - This is defined in Jpa.
   - This handles a set of entities that contain data to be persisted
   - This takes care of tracking and persisting the entities
